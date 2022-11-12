@@ -1,0 +1,16 @@
+.square {
+  height: 110px;
+  width: 110px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  .circle {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+}
+
+.center {
+  margin-left: 90%;
+}

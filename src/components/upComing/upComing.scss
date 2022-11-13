@@ -1,0 +1,32 @@
+.UpComing {
+  display: grid;
+  grid-template-columns: 2fr 4fr 1fr;
+  background-color: #8a4444;
+  width: 500px;
+  border-radius: 20px;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 0 10px 5px #202020;
+  .poster {
+    img {
+      border-radius: 20px 30px 30px 20px;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .content {
+    h3 {
+      margin-bottom: 0;
+    }
+    .details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      color: #fff;
+    }
+  }
+  .deco {
+    padding: 10px;
+    align-self: center;
+    justify-self: center;
+  }
+}

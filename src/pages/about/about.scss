@@ -1,0 +1,50 @@
+.About {
+  .hero {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 9em;
+    .right {
+      width: 500px;
+      height: 500px;
+      background-color: #ededed;
+      border-radius: 50%;
+      float: right;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .left {
+      h1 {
+        margin-bottom: 2em;
+      }
+    }
+  }
+  .section {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #000000;
+    color: #fff;
+    align-items: center;
+    .left {
+      display: flex;
+      .circle {
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        margin: auto;
+        overflow: hidden;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+    .right {
+      width: 80%;
+    }
+  }
+}

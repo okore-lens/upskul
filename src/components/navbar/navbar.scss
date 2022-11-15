@@ -3,11 +3,6 @@ nav {
   width: 100vw;
   z-index: 1;
 
-  .active {
-    background-color: #33312fe3;
-    transition: background-color 2s ease-in-out;
-  }
-
   .container {
     background-color: none;
     transition: background-color 1.5s linear;
@@ -24,6 +19,7 @@ nav {
     a {
       text-decoration: none;
       color: #000;
+      transition: color 1.5s linear;
     }
 
     .logo {
@@ -33,7 +29,7 @@ nav {
 
     .middle-nav {
       font-size: 16px;
-      font-weight: bold;
+      font-weight: bolder;
       a {
         margin: 1em;
       }
@@ -55,6 +51,14 @@ nav {
           }
         }
       }
+    }
+  }
+  .active {
+    background-color: #33312fe3;
+    transition: background-color 2s ease-in-out;
+    a {
+      color: #ffff;
+      transition: color 2s ease-in-out;
     }
   }
 }

@@ -2,6 +2,7 @@ import HeroText from "./component/HeroText";
 import image from "../../assets/images/image.jpg";
 
 import "./about.scss";
+import Contact from "./component/contact/Contact";
 
 const About = () => {
   return (
@@ -51,6 +52,14 @@ const About = () => {
             recusandae molestias.
           </p>
         </div>
+      </div>
+      <div className="bottom-text">
+        <HeroText />
+        <HeroText />
+        <HeroText />
+      </div>
+      <div className="contact">
+        <Contact />
       </div>
     </div>
   );

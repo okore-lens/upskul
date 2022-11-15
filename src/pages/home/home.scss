@@ -80,6 +80,9 @@
     text-align: center;
     width: 70%;
     margin: 100px auto;
+    h1 {
+      margin: 3em;
+    }
     .events {
       display: grid;
       background-color: #765f5f;
@@ -94,7 +97,7 @@
     height: 120vh;
     background-color: #000000;
     color: #fff;
-    margin: 100px auto;
+    margin: 150px auto;
     margin-bottom: 0;
     display: grid;
     grid-template-rows: 2fr 1fr;

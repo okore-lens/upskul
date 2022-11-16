@@ -1,8 +1,8 @@
 import HeroText from "./component/HeroText";
 import image from "../../assets/images/image.jpg";
+import Contact from "../../components/contact/Contact";
 
 import "./about.scss";
-import Contact from "./component/contact/Contact";
 
 const About = () => {
   return (

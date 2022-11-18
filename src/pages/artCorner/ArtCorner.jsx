@@ -1,30 +1,52 @@
+import { useEffect, useState } from "react";
 import "./artCorner.scss";
 import ArtCard from "./components/ArtCard";
 import ArtistCard from "./components/ArtistCard";
 
 const ArtCorner = () => {
+  const [active, setActive] = useState(3);
+
+  const text = (
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ipsam
+      laboriosam voluptatibus laudantium, iure iusto soluta? Ducimus sint quod
+      laudantium odio porro nam voluptate ipsa sit necessitatibus harum ad
+      suscipit in reiciendis quidem dolor, soluta molestias. Temporibus illo
+      libero culpa. Optio sequi ipsum corporis animi?
+    </p>
+  );
   const arts = [
     {
       title: "Music",
-      id: "1",
+      id: 1,
+      text,
     },
     {
       title: "Instrumentals",
-      id: "2",
+      id: 2,
+      text,
     },
     {
       title: "Poetry",
-      id: "3",
+      id: 3,
+      text,
     },
     {
       title: "Comedy",
-      id: "4",
+      id: 4,
+      text,
     },
     {
       title: "Dancers",
-      id: "5",
+      id: 5,
+      text,
     },
   ];
+
+  const activeHandler = (id) => {
+    setActive(id);
+  };
+
   return (
     <div className="ArtCorner">
       <div className="hero">
@@ -40,7 +62,14 @@ const ArtCorner = () => {
 
         <div className="art-cards">
           {arts.map((art) => (
-            <ArtCard key={art.id} id={art.id} title={art.title} />
+            <ArtCard
+              key={art.id}
+              id={art.id}
+              title={art.title}
+              text={art.text}
+              active={active}
+              activeHandler={activeHandler}
+            />
           ))}
         </div>
 

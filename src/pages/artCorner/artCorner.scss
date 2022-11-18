@@ -27,6 +27,7 @@
         height: 500px;
         padding: 10px;
         background-color: #d9d9d9;
+        transition: background-color 1.5s ease-out;
         .number {
           height: 20%;
           hr {
@@ -63,6 +64,7 @@
         width: 700px;
         padding: 10px;
         text-align: start;
+        transition: background-color 1.5s ease-in-out;
         .number {
           hr {
             display: none;

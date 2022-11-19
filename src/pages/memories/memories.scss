@@ -1,0 +1,25 @@
+.Memories {
+  .hero {
+    width: 100%;
+    height: 40vh;
+    background-image: url(../../assets/images/image.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .showcase {
+    width: 80%;
+    margin: 6em auto;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    .youtube {
+      display: grid;
+      gap: 50px;
+      .YoutubeCard {
+        width: 80%;
+        height: 300px;
+        background-color: #000000;
+      }
+    }
+  }
+}

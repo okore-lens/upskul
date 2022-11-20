@@ -1,11 +1,59 @@
+import { useState } from "react";
 import CircularSquare from "../../components/circularSquare/CircularSquare";
 import Hero from "./components/Hero";
 import UpComing from "../../components/upComing/UpComing";
 import image from "../../assets/images/image.jpg";
+import upcoming from "./components/upcoming";
 
 import "./home.scss";
+import Modal from "../../UI/Modal";
 
 const Home = () => {
+  const [eventItem, setEventItem] = useState({
+    title: "",
+    description: "",
+    artist: "",
+    time: "",
+    date: "",
+    venue: "",
+  });
+  const [showModal, setShowModal] = useState(false);
+
+  const modalHandler = (id) => {
+    id -= 1;
+    setEventItem({
+      title: upcoming[id].title,
+      description: upcoming[id].description,
+      artist: upcoming[id].artist,
+      time: upcoming[id].time,
+      date: upcoming[id].date,
+      venue: upcoming[id].venue,
+    });
+    setShowModal(true);
+  };
+
+  const modalContent = (
+    <div className="content">
+      <h1>{eventItem.title}</h1>
+      <div className="content-details">
+        <div className="image">
+          <img src={image} />
+        </div>
+        <div className="content-detail">
+          <p>{eventItem.artist}</p>
+          <p>{eventItem.date}</p>
+          <p>{eventItem.venue}</p>
+          <p>{eventItem.time}</p>
+        </div>
+      </div>
+      <p>{eventItem.description}</p>
+    </div>
+  );
+
+  // Handling Backdrop Clicks
+  const closeHandler = () => {
+    setShowModal(false);
+  };
   return (
     <div className="Home">
       <CircularSquare marginLeft={"40%"} backgroundColor={"#636262"} />
@@ -16,15 +64,20 @@ const Home = () => {
       <div className="upcoming">
         <h1>UpComing Events</h1>
         <div className="events">
-          <UpComing />
-          <UpComing />
-          <UpComing />
-          <UpComing />
-          <UpComing />
-          <UpComing />
-          <UpComing />
-          <UpComing />
+          {upcoming.map((event) => (
+            <UpComing
+              key={event.id}
+              id={event.id}
+              title={event.title}
+              artist={event.artist}
+              venue={event.venue}
+              date={event.date}
+              time={event.time}
+              isClicked={modalHandler}
+            />
+          ))}
         </div>
+        {showModal && <Modal onClose={closeHandler}>{modalContent}</Modal>}
       </div>
       <div className="home-about">
         <div className="about">

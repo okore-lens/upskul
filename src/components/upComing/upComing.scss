@@ -29,4 +29,9 @@
     align-self: center;
     justify-self: center;
   }
+  &:hover {
+    cursor: pointer;
+    background-color: #000000;
+    color: #fff;
+  }
 }

@@ -7,6 +7,7 @@ import upcoming from "./components/upcoming";
 
 import "./home.scss";
 import Modal from "../../UI/Modal";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [eventItem, setEventItem] = useState({
@@ -88,7 +89,9 @@ const Home = () => {
             </h1>
             <div className="circular-help">
               <div className="inner-circle">
-                <p>Get In Touch</p>
+                <Link to="/about">
+                  <p>Get In Touch</p>
+                </Link>
               </div>
             </div>
           </div>

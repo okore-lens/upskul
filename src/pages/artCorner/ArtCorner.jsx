@@ -1,47 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./artCorner.scss";
 import ArtCard from "./components/ArtCard";
 import ArtistCard from "./components/ArtistCard";
+import { arts, artists } from "./components/arts";
 
 const ArtCorner = () => {
   const [active, setActive] = useState(3);
-
-  const text = (
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore ipsam
-      laboriosam voluptatibus laudantium, iure iusto soluta? Ducimus sint quod
-      laudantium odio porro nam voluptate ipsa sit necessitatibus harum ad
-      suscipit in reiciendis quidem dolor, soluta molestias. Temporibus illo
-      libero culpa. Optio sequi ipsum corporis animi?
-    </p>
-  );
-  const arts = [
-    {
-      title: "Music",
-      id: 1,
-      text,
-    },
-    {
-      title: "Instrumentals",
-      id: 2,
-      text,
-    },
-    {
-      title: "Poetry",
-      id: 3,
-      text,
-    },
-    {
-      title: "Comedy",
-      id: 4,
-      text,
-    },
-    {
-      title: "Dancers",
-      id: 5,
-      text,
-    },
-  ];
 
   const activeHandler = (id) => {
     setActive(id);
@@ -82,20 +46,13 @@ const ArtCorner = () => {
         <h1>Our Artists</h1>
         <p>Both Present and Past</p>
         <div className="artist-cards">
-          <ArtistCard />
-          <ArtistCard />
-          <ArtistCard />
-          <ArtistCard />
-          <ArtistCard />
-          <ArtistCard />
-          <ArtistCard />
-          <ArtistCard />
-          <ArtistCard />
-          <ArtistCard />
-          <ArtistCard />
-          <ArtistCard />
-          <ArtistCard />
-          <ArtistCard />
+          {artists.map((artist) => (
+            <ArtistCard
+              key={artist.id}
+              name={artist.name}
+              profession={artist.profession}
+            />
+          ))}
         </div>
       </div>
     </div>

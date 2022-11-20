@@ -1,14 +1,14 @@
 import image from "../../../assets/images/image.jpg";
 
-const ArtistCard = () => {
+const ArtistCard = ({ profession, name }) => {
   return (
     <div className="Artist-Card">
       <div className="image">
         <img src={image} />
       </div>
       <div className="name">
-        <p>Poet, Artist, Picasso</p>
-        <h3>Lens</h3>
+        <p>{profession}</p>
+        <h3>{name}</h3>
       </div>
     </div>
   );

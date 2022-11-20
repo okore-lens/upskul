@@ -1,7 +1,23 @@
+import { useState } from "react";
+import Modal from "../../../UI/Modal";
+
 const ArtCard = ({ id, title, text, active, activeHandler }) => {
+  const [showModal, setShowModal] = useState(false);
+
   const clickHandler = () => {
     activeHandler(id);
   };
+
+  const truncatedText = text.substring(0, 340);
+
+  const discoverHandler = () => {
+    setShowModal(true);
+  };
+
+  const closeHandler = () => {
+    setShowModal(false);
+  };
+
   return (
     <div
       onClick={clickHandler}
@@ -14,8 +30,17 @@ const ArtCard = ({ id, title, text, active, activeHandler }) => {
       <div className="title">
         <h3>{title}</h3>
         <hr />
-        {text}
-        <button>Discover Now</button>
+        <p>{truncatedText} ......</p>
+        <button onClick={discoverHandler}>Discover Now</button>
+        {showModal && (
+          <Modal onClose={closeHandler}>
+            <div className="art-modal">
+              <h1>{title}</h1>
+              <hr />
+              <p>{text}</p>
+            </div>
+          </Modal>
+        )}
       </div>
     </div>
   );

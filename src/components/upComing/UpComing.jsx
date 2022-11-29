@@ -17,12 +17,20 @@ const UpComing = ({ id, title, venue, artist, date, time, isClicked }) => {
         <h3>{title}</h3>
         <div className="details">
           <div className="left">
-            <p>{artist}</p>
-            <p>{venue}</p>
+            <div>
+              <strong>{artist}</strong>
+            </div>
+            <div>
+              <strong>{venue}</strong>
+            </div>
           </div>
           <div className="right">
-            <p>{date}</p>
-            <p>{time}</p>
+            <div>
+              <strong>{date}</strong>
+            </div>
+            <div>
+              <strong>{time}</strong>
+            </div>
           </div>
         </div>
       </div>

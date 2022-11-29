@@ -22,6 +22,9 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       color: #fff;
+      div {
+        margin-block: 10px 10px;
+      }
     }
   }
   .deco {
